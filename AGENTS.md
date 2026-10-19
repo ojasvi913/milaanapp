@@ -1,4 +1,15 @@
-This is an Expo/React Native mobile application. Prioritize mobile-first patterns, performance, and cross-platform compatibility.
+This is MilaanSutra, an Expo/React Native mobile application. Prioritize mobile-first patterns, performance, and cross-platform compatibility.
+
+## Product design
+
+Before any UI work, read `docs/PRODUCT_DESIGN_BRIEF.md` and follow it.
+
+- Design and build one screen at a time. Implement a screen only after the user has approved its visual reference.
+- Do not invent screen requirements, fill in unapproved screens, or redesign an approved screen.
+- The phone login in `src/app/index.tsx` and the colors in `src/constants/theme.ts` are scaffolding. Do not treat them as the brand.
+- Do not invent a logo. No approved logo is in the repo.
+- Do not build homepage, discovery, swipe, chat, or settings until the user asks.
+- Keep screens separate from `src/lib/api/`. Use mocks. Do not invent backend behavior.
 
 ## Expo has changed — do not trust your training data
 

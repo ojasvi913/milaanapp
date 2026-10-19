@@ -1,65 +1,40 @@
-/**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://unistyl.es/), etc.
- */
-
-import '@/global.css';
-
-import { Platform } from 'react-native';
-
 export const Colors = {
-  light: {
-    text: '#000000',
-    background: '#ffffff',
-    backgroundElement: '#F0F0F3',
-    backgroundSelected: '#E0E1E6',
-    textSecondary: '#60646C',
-  },
-  dark: {
-    text: '#ffffff',
-    background: '#000000',
-    backgroundElement: '#212225',
-    backgroundSelected: '#2E3135',
-    textSecondary: '#B0B4BA',
-  },
+  burgundy: "#7A1638",
+  burgundyPressed: "#61122C",
+  rose: "#E8A5B1",
+  ivory: "#FFF8F0",
+  blush: "#F8EAE9",
+  teal: "#2B685B",
+  tealSoft: "#E7F2EF",
+  champagne: "#D4AF72",
+  white: "#FFFFFF",
+  ink: "#3A1C28",
+  muted: "#7A5362",
+  coral: "#D93B55",
+  coralPressed: "#BD2E44",
+  coralSoft: "#FFF0F2",
+  coralBorder: "#FFD2DA",
+  gold: "#E5A93C",
+  goldSoft: "#FFF8E7",
+  green: "#10B981",
+  greenSoft: "#E6F7F0",
+  slate: "#253443",
+  slateLight: "#485C6E",
+  border: "#EBECEF",
+  subtext: "#6B7280",
 } as const;
 
-export type ThemeColor = keyof typeof Colors.light & keyof typeof Colors.dark;
-
-export const Fonts = Platform.select({
-  ios: {
-    /** iOS `UIFontDescriptorSystemDesignDefault` */
-    sans: 'system-ui',
-    /** iOS `UIFontDescriptorSystemDesignSerif` */
-    serif: 'ui-serif',
-    /** iOS `UIFontDescriptorSystemDesignRounded` */
-    rounded: 'ui-rounded',
-    /** iOS `UIFontDescriptorSystemDesignMonospaced` */
-    mono: 'ui-monospace',
-  },
-  default: {
-    sans: 'normal',
-    serif: 'serif',
-    rounded: 'normal',
-    mono: 'monospace',
-  },
-  web: {
-    sans: 'var(--font-display)',
-    serif: 'var(--font-serif)',
-    rounded: 'var(--font-rounded)',
-    mono: 'var(--font-mono)',
-  },
-});
-
 export const Spacing = {
-  half: 2,
   one: 4,
   two: 8,
   three: 16,
   four: 24,
   five: 32,
-  six: 64,
+  six: 48,
 } as const;
 
-export const BottomTabInset = Platform.select({ ios: 50, android: 80 }) ?? 0;
-export const MaxContentWidth = 800;
+export const Radius = {
+  field: 14,
+  card: 16,
+  pill: 999,
+} as const;
