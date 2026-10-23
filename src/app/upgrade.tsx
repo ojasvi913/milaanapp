@@ -298,7 +298,7 @@ export default function UpgradeScreen() {
           onPress={() => setShowHelp(true)}
           style={[styles.floatingHelpBtn, { bottom: insets.bottom + 95 }]}
         >
-          <MessageSquareText color={Colors.coral} size={22} strokeWidth={2.2} />
+          <MessageSquareText color={Colors.green} size={22} strokeWidth={2.2} />
         </Pressable>
 
         {/* Fixed Bottom Bar */}
@@ -333,7 +333,7 @@ export default function UpgradeScreen() {
                 <Text style={styles.modalBulletText}>30-Day 100% Refund Guarantee on eligible plans</Text>
               </View>
               <View style={styles.modalBulletRow}>
-                <Check color={Colors.coral} size={20} />
+                <Check color={Colors.green} size={20} />
                 <Text style={styles.modalBulletText}>Verified contact numbers and direct family chats</Text>
               </View>
               <Pressable
@@ -364,7 +364,7 @@ export default function UpgradeScreen() {
               </View>
               <Text style={styles.modalBody}>
                 You selected <Text style={{ fontWeight: "700" }}>{selectedPlan.name}</Text> for{" "}
-                <Text style={{ fontWeight: "700", color: Colors.coral }}>{selectedPlan.price}</Text> ({selectedPlan.term}).
+                <Text style={{ fontWeight: "700", color: Colors.green }}>{selectedPlan.price}</Text> ({selectedPlan.term}).
               </Text>
               <Text style={[styles.modalBody, { fontSize: 13, color: "#6B7280" }]}>
                 (Preview Mode: In production, this connects to Razorpay / Stripe gateway.)
@@ -385,7 +385,7 @@ export default function UpgradeScreen() {
 }
 
 const styles = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: "#FFFFFF" },
+  screen: { flex: 1, backgroundColor: Colors.ivory },
   column: { flex: 1, width: "100%", maxWidth: 440, alignSelf: "center" },
   header: {
     flexDirection: "row",
@@ -415,7 +415,7 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
   },
   helpBtnText: {
-    color: Colors.coral,
+    color: Colors.green,
     fontSize: 14,
     fontWeight: "600",
   },
@@ -441,9 +441,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   serviceTabActive: {
-    backgroundColor: Colors.coralSoft,
+    backgroundColor: Colors.greenSoft,
     borderWidth: 1.5,
-    borderColor: Colors.coral,
+    borderColor: Colors.green,
   },
   serviceTabInactive: {
     backgroundColor: "transparent",
@@ -527,8 +527,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   durationPillActive: {
-    borderColor: Colors.coral,
-    backgroundColor: Colors.coralSoft,
+    borderColor: Colors.green,
+    backgroundColor: Colors.greenSoft,
     borderWidth: 1.5,
   },
   durationText: {
@@ -622,13 +622,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   radioCircleSelected: {
-    borderColor: Colors.coral,
+    borderColor: Colors.green,
   },
   radioInnerDot: {
     width: 12,
     height: 12,
     borderRadius: 6,
-    backgroundColor: Colors.coral,
+    backgroundColor: Colors.green,
   },
   featuresList: {
     marginTop: 2,
@@ -671,21 +671,21 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   ctaBtn: {
-    backgroundColor: Colors.coral,
+    backgroundColor: Colors.green,
     borderRadius: Radius.pill,
     minHeight: 50,
     width: "100%",
     maxWidth: 400,
     alignItems: "center",
     justifyContent: "center",
-    shadowColor: Colors.coral,
+    shadowColor: Colors.green,
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.25,
     shadowRadius: 6,
     elevation: 4,
   },
   ctaBtnPressed: {
-    backgroundColor: Colors.coralPressed,
+    backgroundColor: Colors.greenSoft,
   },
   ctaBtnText: {
     color: "#FFFFFF",
@@ -742,7 +742,7 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
   modalPrimaryBtn: {
-    backgroundColor: Colors.coral,
+    backgroundColor: Colors.green,
     borderRadius: 12,
     minHeight: 44,
     alignItems: "center",

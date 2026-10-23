@@ -2,6 +2,7 @@ import { router } from "expo-router";
 import { Bell, Search } from "lucide-react-native";
 import { useState } from "react";
 import {
+  Platform,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -15,6 +16,13 @@ import { TabBar } from "@/components/app-screen";
 import { Portrait } from "@/components/portrait";
 import { Colors, Spacing } from "@/constants/theme";
 import { people, received, threads } from "@/main/data";
+
+const serif = Platform.select({
+  ios: "Georgia",
+  android: "serif",
+  web: "Georgia, 'Times New Roman', serif",
+  default: "serif",
+});
 
 const sections = ["Accepted", "Interests"] as const;
 
@@ -54,7 +62,7 @@ export default function MessagesScreen() {
               onPress={() => router.push("/notifications")}
               style={styles.iconBtn}
             >
-              <Bell color="#374151" size={22} strokeWidth={2} />
+              <Bell color={Colors.burgundy} size={22} strokeWidth={2} />
             </Pressable>
 
             <Pressable
@@ -63,7 +71,7 @@ export default function MessagesScreen() {
               onPress={() => router.push("/search")}
               style={styles.iconBtn}
             >
-              <Search color="#374151" size={22} strokeWidth={2} />
+              <Search color={Colors.burgundy} size={22} strokeWidth={2} />
             </Pressable>
           </View>
         </View>
@@ -233,16 +241,16 @@ export default function MessagesScreen() {
 }
 
 const styles = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: "#FFFFFF" },
+  screen: { flex: 1, backgroundColor: Colors.ivory },
   column: { flex: 1, width: "100%", maxWidth: 440, alignSelf: "center" },
-  header: {
+  header: { backgroundColor: Colors.ivory,
     flexDirection: "row",
     alignItems: "center",
     paddingHorizontal: Spacing.four,
     paddingVertical: 12,
     borderBottomWidth: 1,
     borderBottomColor: "#F3F4F6",
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.ivory,
     gap: 12,
   },
   profileBtn: {
@@ -250,10 +258,11 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     flex: 1,
-    fontSize: 22,
+    fontFamily: serif,
+    fontSize: 28,
+    lineHeight: 32,
     fontWeight: "800",
-    color: "#111827",
-    letterSpacing: -0.3,
+    color: Colors.burgundy,
   },
   headerActions: {
     flexDirection: "row",
@@ -301,7 +310,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 4,
   },
   viewAllText: {
-    color: Colors.coral,
+    color: Colors.green,
     fontSize: 14,
     fontWeight: "700",
   },
@@ -362,7 +371,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     height: 3,
-    backgroundColor: Colors.coral,
+    backgroundColor: Colors.green,
     borderRadius: 2,
   },
   emptyContainer: {
@@ -385,7 +394,7 @@ const styles = StyleSheet.create({
     width: 44,
     height: 36,
     borderRadius: 18,
-    backgroundColor: "#6EE7B7",
+    backgroundColor: Colors.greenSoft,
   },
   frontBubble: {
     position: "absolute",
@@ -394,7 +403,7 @@ const styles = StyleSheet.create({
     width: 52,
     height: 42,
     borderRadius: 21,
-    backgroundColor: "#F05A7E",
+    backgroundColor: Colors.green,
     alignItems: "center",
     justifyContent: "center",
     shadowColor: "#F05A7E",
@@ -491,7 +500,7 @@ const styles = StyleSheet.create({
     color: "#6B7280",
   },
   threadUnread: {
-    color: Colors.coral,
+    color: Colors.green,
     fontWeight: "600",
   },
   threadMeta: {
@@ -506,6 +515,6 @@ const styles = StyleSheet.create({
     width: 8,
     height: 8,
     borderRadius: 4,
-    backgroundColor: Colors.coral,
+    backgroundColor: Colors.green,
   },
 });
